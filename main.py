@@ -1,4 +1,8 @@
 import requests
+from dotenv import load_dotenv
+from os import getenv
+
+load_dotenv(".env")
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -6,8 +10,8 @@ COMPANY_NAME = "Tesla Inc"
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-STOCK_API_KEY = "PG5RA6TT13IVAZFY"
-NEWS_API_KEY = "887a03a07ede4c2abd720e69ee677339"
+STOCK_API_KEY = getenv("STOCK_API_KEY")
+NEWS_API_KEY = getenv("NEWS_API_KEY")
 
 stock_params = {
     "function": "TIME_SERIES_DAILY",
